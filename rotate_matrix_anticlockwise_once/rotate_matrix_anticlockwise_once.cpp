@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void display2DMatrix(vector<vector<int>> matrix){
+    matrix[0][1] = 99;
+    for(int r=0; r<matrix.size(); r++){
+        for(int c=0; c<matrix[0].size(); c++){
+            cout<<matrix[r][c]<<" ";
+        }cout<<"\n";
+    }cout<<"\n";
+}
+
 int main(){
     vector<vector<int>> prevMatrix = {
         {1, 2, 3, 4},
@@ -19,12 +28,6 @@ int main(){
             rotatedMatrix[newRow][newCol] = prevMatrix[r][c];
         }
     }
-    for(int r=0; r<rotatedMatrix.size(); r++){
-        for(int c=0; c<rotatedMatrix[0].size(); c++){
-            cout<<rotatedMatrix[r][c]<<" ";
-        }cout<<"\n";
-    }
-
-    
-    
+    display2DMatrix(rotatedMatrix);
+    cout<<"Value should remain unchanged due to pass by value "<<rotatedMatrix[0][1];
 }
