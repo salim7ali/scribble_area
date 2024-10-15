@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// https://www.youtube.com/watch?v=Z0R2u6gd3GU
 
 using namespace std;
 
@@ -13,11 +14,6 @@ void displayMatrix(vector<vector<int>> matrix){
 void reverseRowsOfMatrix(vector<vector<int>> &matrix){
     int SIZE = matrix.size(); 
     int mid = (SIZE/2)-1;
-    // if(SIZE%2 == 0){   // odd length 
-    //     mid = (SIZE/2) - 1;
-    // }else{             // even lenght
-    //     mid = (SIZE/2);
-    // }
 
     for(int i=0; i<SIZE; i++){
         for(int j=0; j<=mid; j++){
