@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+bool isValidPosition(int i, int j, vector<vector<int>> &islandMatrix){
+    if(i<0 || j<0 || i>islandMatrix.size()-1 || j>islandMatrix[0].size()-1)
+        return false;
+    return true;
+
+}
+
 void dfs(int i, int j, vector<vector<int>> &islandMatrix){
     if(islandMatrix[i][j] != 1) //empty or visited previously
         return;
@@ -13,7 +20,7 @@ void dfs(int i, int j, vector<vector<int>> &islandMatrix){
         currentNeighbourRow = i + relativeNeighPositions[neighIndex].first;
         currentNeighbourCol = j + relativeNeighPositions[neighIndex].second;
 
-        if(isValidPosition(currentNeighbourRow, currentNeighbourCol) == false)
+        if(isValidPosition(currentNeighbourRow, currentNeighbourCol, islandMatrix) == false)
             continue;
         
         dfs(currentNeighbourRow, currentNeighbourCol, islandMatrix);
